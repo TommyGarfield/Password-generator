@@ -35,18 +35,19 @@ if use_numbers == 'yes':
 if use_symbols == 'yes':
     character_pool += symbols
 
-#check if charcter_pool is empty
+#check if character_pool is empty
 if not character_pool:
     print('Error: You must select at least one character type!')
 
 
-#string to hold password
-final_password = ''
+else:
+    #string to hold password
+    final_password = ''
 
-#loop through selected characters, adding at random to final_password
-for number in range(password_length):
-    random_char = random.choice(character_pool)
-    final_password += random_char
+    #loop through selected characters, adding at random to final_password
+    for number in range(password_length):
+        random_char = random.choice(character_pool)
+        final_password += random_char
 
-print(final_password)
+    print(final_password)
 
