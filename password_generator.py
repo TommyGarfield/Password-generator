@@ -23,26 +23,36 @@ use_symbols = input('Do you want to include symbols in your password? Type yes/n
 character_pool = ''
 
 #list of 1 character from each selected character type
-mandatory_character = []
+mandatory_characters = []
 
 #if user selected yes add to character_pool and add 1 character to mandatory_character
 if use_lowercase == 'yes':
     character_pool += lowercase_letters
-    mandatory_character.append(random.choice(lowercase_letters))
+    mandatory_characters.append(random.choice(lowercase_letters))
 
 if use_uppercase == 'yes':
     character_pool += uppercase_letters
-    mandatory_character.append(random.choice(uppercase_letters))
+    mandatory_characters.append(random.choice(uppercase_letters))
 
 if use_numbers == 'yes':
     character_pool += numbers
-    mandatory_character.append(random.choice(numbers))
+    mandatory_characters.append(random.choice(numbers))
 
 if use_symbols == 'yes':
     character_pool += symbols
-    mandatory_character.append(random.choice(symbols))
+    mandatory_characters.append(random.choice(symbols))
 
-print(mandatory_character)
+print(mandatory_characters)
+
+#calculate how many remaining characters needed after mandatory ones chosen
+remaining_length = password_length - len(mandatory_characters)
+
+#check that remaining length is correct
+print(remaining_length)
+
+for number in range(remaining_length):
+    mandatory_characters.append(random.choice(character_pool))
+
 
 #check if character_pool is empty
 if not character_pool:
