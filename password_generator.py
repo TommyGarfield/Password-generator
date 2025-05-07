@@ -22,18 +22,27 @@ use_symbols = input('Do you want to include symbols in your password? Type yes/n
 #empty string containing password characters chosen by user
 character_pool = ''
 
-#if user selected yes add to character_pool
+#list of 1 character from each selected character type
+mandatory_character = []
+
+#if user selected yes add to character_pool and add 1 character to mandatory_character
 if use_lowercase == 'yes':
     character_pool += lowercase_letters
+    mandatory_character.append(random.choice(lowercase_letters))
 
 if use_uppercase == 'yes':
     character_pool += uppercase_letters
+    mandatory_character.append(random.choice(uppercase_letters))
 
 if use_numbers == 'yes':
     character_pool += numbers
+    mandatory_character.append(random.choice(numbers))
 
 if use_symbols == 'yes':
     character_pool += symbols
+    mandatory_character.append(random.choice(symbols))
+
+print(mandatory_character)
 
 #check if character_pool is empty
 if not character_pool:
