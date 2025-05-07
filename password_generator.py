@@ -17,3 +17,21 @@ use_numbers = input('Do you want to include numbers in your password? Type yes/n
 use_symbols = input('Do you want to include symbols in your password? Type yes/no ').lower()
 
 
+#empty string containing password characters chosen by user
+character_pool = ''
+
+#if user selected yes add to character_pool
+if use_lowercase == 'yes':
+    character_pool += lowercase_letters
+
+if use_uppercase == 'yes':
+    character_pool += uppercase_letters
+
+if use_numbers == 'yes':
+    character_pool += numbers
+
+if use_symbols == 'yes':
+    character_pool += symbols
+
+#check which characters selected
+print(character_pool)
