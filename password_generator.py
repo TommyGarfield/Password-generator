@@ -42,14 +42,10 @@ if use_symbols == 'yes':
     character_pool += symbols
     mandatory_characters.append(random.choice(symbols))
 
-print(mandatory_characters)
-
 #calculate how many remaining characters needed after mandatory ones chosen
 remaining_length = password_length - len(mandatory_characters)
 
-#check that remaining length is correct
-print(remaining_length)
-
+#for remaining number of characters left, randomly choose that many from pool
 for number in range(remaining_length):
     mandatory_characters.append(random.choice(character_pool))
 
@@ -58,15 +54,11 @@ for number in range(remaining_length):
 if not character_pool:
     print('Error: You must select at least one character type!')
 
-
+#shuffle up the final character list and print password
 else:
-    #string to hold password
-    final_password = ''
+    random.shuffle(mandatory_characters)    
+    final_password = ''.join(mandatory_characters)
 
-    #loop through selected characters, adding at random to final_password
-    for number in range(password_length):
-        random_char = random.choice(character_pool)
-        final_password += random_char
 
-    print(final_password)
+    print('Your new password is: ', final_password)
 
