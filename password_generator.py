@@ -1,5 +1,7 @@
 #Password generator
 
+import random
+
 #Get password length from user, store in variable password_length
 password_length = int(input("Enter the desired password length "))
 
@@ -33,5 +35,14 @@ if use_numbers == 'yes':
 if use_symbols == 'yes':
     character_pool += symbols
 
-#check which characters selected
-print(character_pool)
+
+#string to hold password
+final_password = ''
+
+#loop through selected characters, adding at random to final_password
+for number in range(password_length):
+    random_char = random.choice(character_pool)
+    final_password += random_char
+
+print(final_password)
+
