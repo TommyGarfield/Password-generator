@@ -35,6 +35,10 @@ if use_numbers == 'yes':
 if use_symbols == 'yes':
     character_pool += symbols
 
+#check if charcter_pool is empty
+if not character_pool:
+    print('Error: You must select at least one character type!')
+
 
 #string to hold password
 final_password = ''
